@@ -1,6 +1,16 @@
 def most_varied_visitor(visits):
     # Write your solution here!
-    pass
+    most_visits = dict()
+    for peeps in visits.values():
+        for peep in set(peeps):
+            if peep in most_visits:
+                most_visits[peep] += 1
+            else:
+                most_visits[peep] = 1
+    # Max in dictonary
+    max_value = max(most_visits, key=most_visits.get)
+    return max_value
+    
 
 
 visits_1 = {
